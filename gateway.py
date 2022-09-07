@@ -23,9 +23,7 @@ class gateway:
         self.start()
     
     def checkMessages(self):
-        ret = sms_end.messages_in
-        sms_end.messages_in = []
-        self.smsHandler.checkMessages()
+        ret = self.smsHandler.checkMessages()
         self.xmppHandler.checkMessages()
         return ret
 
