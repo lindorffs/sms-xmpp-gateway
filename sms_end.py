@@ -13,11 +13,17 @@ class smsListener(BaseHTTPRequestHandler):
         for key in data.keys():
             data[key] = unquote_plus(data[key])
         messages_in.append(data)
-        print(msgFormat(data))
+        try:
+         print(msgFormat(data))
+        except:
+         pass
 
 class smsServer:
     def __init__(self):
-        self.httpd = HTTPServer(("0.0.0.0", 14444), smsListener)
+        try:
+         self.httpd = HTTPServer(("0.0.0.0", 14444), smsListener)
+        except:
+         pass
 
 class protector:
     server = smsServer()
