@@ -4,7 +4,7 @@ import threading
 import time
 import globalDefs
 
-version_name = "Leaping Lemur"
+version_name = "Leaping Flaire"
 
 class gateway:
     smsHandler = sms_end.smsHandler
